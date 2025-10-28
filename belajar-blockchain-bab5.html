@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 2.5: Masalah Mendasar Blockchain - Kodemasadepan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <div id="page-loader"><div class="spinner"></div></div>
+    
+    <div class="cursor-light-trail"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Buka Menu Navigasi">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Kodemasadepan Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <button id="profile-icon-btn" class="profile-icon-btn" aria-label="Buka Menu Profil">
+                    <i class="fas fa-user"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="article-header">
+                <h1>Modul 2: Masalah Mendasar</h1>
+                <p class="subtitle">Double Spending &amp; Byzantine Fault Tolerance (BFT)</p>
+            </section>
+            
+            <section class="article-content">
+                <h2>1. The Double-Spending Problem</h2>
+                <p>Ini adalah masalah fundamental yang harus dipecahkan oleh *semua* mata uang digital.</p>
+                <p><strong>Definisi:</strong> "Double-Spending" (Pembelanjaan Ganda) adalah risiko bahwa satu unit mata uang digital dapat dibelanjakan lebih dari satu kali.</p>
+                <ul>
+                    <li><strong>Analogi Dunia Fisik:</strong> Ini tidak mungkin terjadi. Jika Anda punya uang tunai Rp100.000 dan Anda berikan ke penjual kopi, uang itu pindah tangan. Anda tidak bisa menggunakan uang yang *sama* untuk membeli buku di sebelahnya.</li>
+                    <li><strong>Analogi Dunia Digital (Tanpa Blockchain):</strong> Ini sangat mungkin. Bayangkan file MP3 atau foto. Anda bisa menyalinnya jutaan kali dan mengirimkannya ke banyak orang. File aslinya masih ada pada Anda.</li>
+                </ul>
+                <p><strong>Solusi Tradisional (Web 2.0):</strong> Menggunakan otoritas pusat (seperti bank). Bank memiliki satu buku besar (database) dan bertindak sebagai wasit. Ketika Anda transfer, bank akan mendebet saldo Anda dan mengkredit saldo penerima. Anda tidak bisa membelanjakannya lagi.</p>
+                <p><strong>Solusi Blockchain (Bitcoin):</strong> Alih-alih satu buku besar, ada ribuan buku besar (blockchain) yang identik. Ketika Anda mengirim 1 BTC, transaksi itu disiarkan ke seluruh jaringan. Para penambang (Miners) memasukkannya ke dalam blok. Setelah blok itu "dikunci" (melalui Proof of Work), transaksi itu bersifat final. Untuk membatalkannya (dan membelanjakannya lagi), Anda harus "mengalahkan" gabungan kekuatan komputasi seluruh jaringan, yang secara matematis hampir mustahil.</p>
+
+                <h2>2. Byzantine Fault Tolerance (BFT)</h2>
+                <p>Ini adalah konsep yang lebih tua dari ilmu komputer, tetapi sangat relevan dengan blockchain. Ini adalah "daging" dari konsensus terdesentralisasi.</p>
+                <p><strong>Definisi:</strong> BFT adalah kemampuan sebuah sistem terdistribusi (tersebar) untuk terus beroperasi dan mencapai kesepakatan (konsensus) meskipun beberapa komponennya (disebut "node" atau "aktor") gagal atau bertindak jahat (memberi informasi palsu).</p>
+                <ul>
+                    <li><strong>Analogi (Masalah Jenderal Bizantium):</strong> Bayangkan beberapa Jenderal Bizantium mengepung sebuah kota. Mereka harus berkomunikasi lewat kurir untuk memutuskan kapan harus menyerang: "Serang" atau "Mundur". Mereka hanya bisa menang jika semua Jenderal menyerang pada saat yang sama.</li>
+                    <li><strong>Masalahnya:</strong> Bagaimana jika satu Jenderal adalah pengkhianat? Dia bisa mengirim pesan "Serang" ke Jenderal A, tapi "Mundur" ke Jenderal B, mengacaukan rencana dan menyebabkan kekalahan.</li>
+                </ul>
+                <p><strong>Solusi Blockchain:</strong> Blockchain (terutama yang menggunakan PoW atau PoS) dirancang untuk menjadi *Byzantine Fault Tolerant*. Aturan konsensus memastikan bahwa jaringan dapat mencapai kesepakatan tentang "kebenaran" (blok mana yang sah) selama mayoritas (biasanya 51%) dari peserta jaringan bertindak jujur.</p>
+                <p>Singkatnya, **BFT adalah properti yang dimiliki oleh sistem**, dan **Konsensus (seperti PoW/PoS) adalah cara untuk mencapainya**.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer><div class="container"><p>&copy; 2025 Kodemasadepan</p></div></footer>
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+    <div id="nav-drawer" class="nav-drawer"><div class="drawer-header"><h3>Menu</h3><button id="drawer-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="drawer-body"><a href="index.html" class="drawer-link">Beranda</a><a href="belajar-blockchain.html" class="drawer-link">Blockchain</a><a href="ai.html" class="drawer-link">AI</a><a href="web3.html" class="drawer-link">Web3</a></div></div>
+    <div id="profile-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Menu Akun</h3><button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div id="modal-logged-in-view" class="hidden"><div class="user-info"><i class="fas fa-user-circle"></i><h4>Nama Pengguna</h4><p>@username_anda</p></div><div class="modal-menu"><button id="open-settings-btn" class="modal-menu-item"><i class="fas fa-cog"></i><span>Pengaturan</span></button><a href="#" id="modal-logout-btn" class="modal-menu-item logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a></div></div><div id="modal-logged-out-view" class="hidden"><p>Anda belum log in. Silakan log in untuk mengakses menu akun.</p><button id="modal-login-btn" class="btn-login">Log In</button></div></div></div></div>
+    <div id="settings-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Pengaturan</h3><button id="settings-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="modal-menu"><a href="profil.html" class="modal-menu-item"><i class="fas fa-user-edit"></i><span>Profil Saya</span></a><div class="modal-menu-item"><i class="fas fa-palette"></i><span>Mode Tampilan</span><button id="theme-toggle-icon" class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></div><a href="tentang.html" class="modal-menu-item"><i class="fas fa-info-circle"></i><span>Tentang Kami</span></a><a href="kebijakan.html" class="modal-menu-item"><i class="fas fa-shield-alt"></i><span>Kebijakan Privasi</span></a><a href="mailto:emailanda@gmail.com" class="modal-menu-item"><i class="fas fa-paper-plane"></i><span>Beri Masukan</span></a></div></div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>

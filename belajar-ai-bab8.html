@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 8: Etika AI &amp Bias Data - Kodemasadepan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div id="page-loader"><div class="spinner"></div></div>
+    <div class="cursor-light-trail"></div>
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Buka Menu Navigasi"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo-link"><img src="logo.png" alt="Kodemasadepan Logo" class="logo-img"></a>
+            </div>
+            <nav class="header-nav">
+                <button id="profile-icon-btn" class="profile-icon-btn" aria-label="Buka Menu Profil"><i class="fas fa-user"></i></button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="article-header">
+                <h1>Bab 8: Etika AI &amp; Bias Data</h1>
+                <p class="subtitle">Mengapa AI Bisa Rasis? Masalah Black Box dan Kepercayaan.</p>
+            </section>
+            <section class="article-content">
+                <p>Seiring AI semakin cerdas, masalah yang paling rumit bukanlah teknis, tetapi etika dan sosial. Ketika AI membuat keputusan (misalnya, menolak pinjaman atau merekomendasikan penangkapan), harus ada akuntabilitas. Inilah inti dari AI yang bertanggung jawab.</p>
+                
+                <h2>Konsep Standar (Definisi Kamus)</h2>
+                <ul>
+                    <li><strong>Bias Data (Data Bias):</strong> Kesalahan sistematis dalam model AI yang disebabkan oleh data pelatihan yang tidak representatif, mengandung prasangka, atau tidak lengkap.</li>
+                    <li><strong>Black Box Problem:</strong> Ketidakmampuan untuk memahami bagaimana model Deep Learning tiba pada keputusannya karena kerumitan Neural Network yang sangat dalam.</li>
+                </ul>
+                
+                <h2>Bedah Konsep (Analogi Kami)</h2>
+                
+                <h3>1. AI Cermin Masyarakat yang Rusak</h3>
+                <p>AI tidak rasis atau bias secara sengaja. AI hanyalah cermin. Jika Anda melatih AI untuk memprediksi risiko pinjaman menggunakan data historis di mana pinjaman lebih sering ditolak untuk kelompok minoritas, AI akan menyimpulkan: **'Pola ini = Risiko Tinggi'**.</p>
+                <p>AI hanya mereplikasi bias dari data pelatihan historis manusia. Masalahnya bukan pada kodenya; masalahnya adalah data latihannya (masyarakat masa lalu) sudah bias.</p>
+                
+                <h3>2. Masalah "Black Box"</h3>
+                <p>Saat Neural Network memiliki miliaran bobot, kita bisa tahu inputnya (gambar/data) dan outputnya (jawaban). Tapi kita tidak bisa menjelaskan **mengapa** ia memilih jawaban itu.</p>
+                <p>Analogi: Model AI adalah **Koki Hebat**. Kita berikan bahan (data), dia berikan hidangan (jawaban). Rasanya enak, tapi kita tidak tahu urutan persis dia memasukkan garam, rempah, atau berapa lama dia memanggangnya. Jika rasanya aneh (keputusan salah), kita hanya bisa mengubah bahan di awal, tapi kita tidak bisa melihat ke dalam dapurnya.</p>
+                <p>Ini masalah besar dalam hukum atau kedokteran, di mana kita **harus** tahu alasan di balik setiap keputusan.</p>
+                
+                <div class="struggle-box">
+                    <h4>Jejak Perjuangan:</h4>
+                    <p><strong>Bagian yang Bikin Pusing:</strong><br>
+                    "Kami sering berpikir, bukankah AI lebih adil karena dia tidak punya emosi? Lalu mengapa laporan sering menunjukkan AI memiliki bias ras atau gender yang kuat? Apakah kita harus memprogram 'etika' di dalamnya?"</p>
+                    
+                    <p><strong>Titik Pencerahan:</strong><br>
+                    "Kami sadar bahwa memprogram 'etika' itu mustahil. Etika bersifat abu-abu dan relatif. Solusi yang realistis adalah di **Data**. Perjuangan melawan Bias AI dimulai sebelum Training. Kita harus bekerja keras membersihkan dan menyeimbangkan data, memastikan data tersebut merepresentasikan dunia yang *adil*, bukan dunia historis yang bias.<br>
+                    Untuk Black Box, bidang **Explainable AI (XAI)** sedang dikembangkan, mencoba menciptakan lapisan interpretasi di sekitar Neural Network agar kita bisa 'mengintip' keputusan Model."</p>
+                </div>
+                
+                <h2>Inti dari Intinya (Ringkasan Kami)</h2>
+                <p>Etika AI adalah tentang memitigasi risiko. Bias terjadi karena AI mereplikasi bias dalam data pelatihan. Black Box Problem adalah tantangan untuk menjelaskan proses pengambilan keputusan AI. Mengatasi masalah ini memerlukan ketelitian data yang ekstrim dan pengembangan AI yang transparan (XAI) untuk mempertahankan kepercayaan publik.</p>
+            </section>
+        </div>
+    </main>
+    <footer><div class="container"><p>&copy; 2025 Kodemasadepan</p></div></footer>
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+    <div id="nav-drawer" class="nav-drawer"><div class="drawer-header"><h3>Menu</h3><button id="drawer-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="drawer-body"><a href="index.html" class="drawer-link">Beranda</a><a href="belajar-blockchain.html" class="drawer-link">Blockchain</a><a href="ai.html" class="drawer-link">AI</a><a href="web3.html" class="drawer-link">Web3</a></div></div>
+    <div id="profile-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Menu Akun</h3><button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div id="modal-logged-in-view" class="hidden"><div class="user-info"><i class="fas fa-user-circle"></i><h4>Nama Pengguna</h4><p>@username_anda</p></div><div class="modal-menu"><button id="open-settings-btn" class="modal-menu-item"><i class="fas fa-cog"></i><span>Pengaturan</span></button><a href="#" id="modal-logout-btn" class="modal-menu-item logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a></div></div><div id="modal-logged-out-view" class="hidden"><p>Anda belum log in. Silakan log in untuk mengakses menu akun.</p><button id="modal-login-btn" class="btn-login">Log In</button></div></div></div></div>
+    <div id="settings-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Pengaturan</h3><button id="settings-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="modal-menu"><a href="profil.html" class="modal-menu-item"><i class="fas fa-user-edit"></i><span>Profil Saya</span></a><div class="modal-menu-item"><i class="fas fa-palette"></i><span>Mode Tampilan</span><button id="theme-toggle-icon" class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></div><a href="tentang.html" class="modal-menu-item"><i class="fas fa-info-circle"></i><span>Tentang Kami</span></a><a href="kebijakan.html" class="modal-menu-item"><i class="fas fa-shield-alt"></i><span>Kebijakan Privasi</span></a><a href="mailto:emailanda@gmail.com" class="modal-menu-item"><i class="fas fa-paper-plane"></i><span>Beri Masukan</span></a></div></div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>

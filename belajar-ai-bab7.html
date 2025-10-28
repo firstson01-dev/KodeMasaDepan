@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 7: Computer Vision (CV) - Kodemasadepan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div id="page-loader"><div class="spinner"></div></div>
+    <div class="cursor-light-trail"></div>
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Buka Menu Navigasi"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo-link"><img src="logo.png" alt="Kodemasadepan Logo" class="logo-img"></a>
+            </div>
+            <nav class="header-nav">
+                <button id="profile-icon-btn" class="profile-icon-btn" aria-label="Buka Menu Profil"><i class="fas fa-user"></i></button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="article-header">
+                <h1>Bab 7: Computer Vision (CV)</h1>
+                <p class="subtitle">Bagaimana AI "Melihat", Mengenali, dan Memahami Gambar/Video.</p>
+            </section>
+            <section class="article-content">
+                <p>Jika LLM (Bab 6) berfokus pada bahasa, Computer Vision (CV) berfokus pada indra penglihatan. CV adalah bidang yang mengajarkan mesin untuk menginterpretasikan dan memahami dunia visual, seperti kamera mobil otonom atau fitur pengenalan wajah pada ponsel Anda.</p>
+                
+                <h2>Konsep Standar (Definisi Kamus)</h2>
+                <p><em>"Computer Vision adalah bidang AI yang memungkinkan komputer untuk mendapatkan pemahaman tingkat tinggi dari gambar digital atau video. Tujuannya adalah untuk mengotomatiskan tugas-tugas yang dapat dilakukan oleh sistem visual manusia."</em></p>
+                
+                <h2>Bedah Konsep (Analogi Kami)</h2>
+                <p>Neural Network di CV adalah seorang **Detektif Seni** yang super teliti. Alih-alih melihat gambar secara utuh, ia memprosesnya secara berlapis:</p>
+                
+                <h3>1. Gambar = Matriks Angka</h3>
+                <p>Bagi komputer, sebuah gambar hanyalah sebuah matriks (kotak) besar berisi angka. Angka-angka ini mewakili warna (RGB) dan kecerahan setiap piksel. Input Layer menerima matriks ini.</p>
+                
+                <h3>2. Convolutional Neural Networks (CNN)</h3>
+                <p>Ini adalah "daging" CV. CNN adalah jenis Neural Network yang didesain khusus untuk data grid (gambar). Ia bekerja dengan lapisan yang disebut **Filter (Kernel)**. Filter ini seperti kacamata yang hanya melihat satu fitur tertentu (misalnya, hanya melihat garis horizontal, atau hanya melihat sudut tajam).</p>
+                <ul>
+                    <li><strong>Lapisan Awal:</strong> Filter mencari tepi, garis, dan tekstur.</li>
+                    <li><strong>Lapisan Tengah:</strong> Menggabungkan tepi menjadi bentuk seperti mata, hidung, atau roda.</li>
+                    <li><strong>Lapisan Akhir:</strong> Menggabungkan bentuk-bentuk tersebut menjadi objek yang dapat dikenali: "Ini adalah wajah manusia", atau "Ini adalah rambu berhenti".</li>
+                </ul>
+                <p>Karena Filter ini diaplikasikan berulang kali di seluruh gambar, CV sangat efisien dalam menemukan pola visual di mana pun pola itu berada.</p>
+                
+                <div class="struggle-box">
+                    <h4>Jejak Perjuangan:</h4>
+                    <p><strong>Bagian yang Bikin Pusing:</strong><br>
+                    "Kami sering bingung bagaimana AI bisa membedakan anjing dari serigala, padahal keduanya sangat mirip. Bukankah AI hanya melihat piksel? Apa yang membuatnya lebih pintar dari sekadar mendeteksi bentuk?"</p>
+                    
+                    <p><strong>Titik Pencerahan:</strong><br>
+                    "Kami menyadari bahwa kecerdasan CV terletak pada **lapisan tengah dan akhir**. Model AI tidak hanya melihat bentuk. Ia belajar dari ribuan gambar yang diberi label untuk menghubungkan pola-pola kecil. Misalnya: ia belajar bahwa 'telapak kaki serigala' berbeda dari 'telapak kaki anjing rumahan' atau 'bentuk mata serigala' memiliki sudut yang berbeda dari anjing.<br>
+                    Computer Vision tidak hanya mendeteksi objek; ia melakukan **Ekstraksi Fitur Otomatis**. Kita tidak perlu memberinya aturan; ia menemukan pola visual tersembunyi yang membedakan objek yang sangat mirip."</p>
+                </div>
+                
+                <h2>Inti dari Intinya (Ringkasan Kami)</h2>
+                <p>Computer Vision mengajarkan komputer untuk memahami gambar dengan memperlakukannya sebagai matriks angka. CNN menggunakan Filter (Kernel) untuk memecah gambar menjadi fitur-fitur yang semakin kompleks melalui banyak lapisan. Ini memungkinkan mesin untuk mengenali dan menginterpretasikan dunia visual dengan akurasi yang mendekati (atau bahkan melampaui) manusia, membuat mobil otonom dan pengawasan menjadi mungkin.</p>
+            </section>
+        </div>
+    </main>
+    <footer><div class="container"><p>&copy; 2025 Kodemasadepan</p></div></footer>
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+    <div id="nav-drawer" class="nav-drawer"><div class="drawer-header"><h3>Menu</h3><button id="drawer-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="drawer-body"><a href="index.html" class="drawer-link">Beranda</a><a href="belajar-blockchain.html" class="drawer-link">Blockchain</a><a href="ai.html" class="drawer-link">AI</a><a href="web3.html" class="drawer-link">Web3</a></div></div>
+    <div id="profile-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Menu Akun</h3><button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div id="modal-logged-in-view" class="hidden"><div class="user-info"><i class="fas fa-user-circle"></i><h4>Nama Pengguna</h4><p>@username_anda</p></div><div class="modal-menu"><button id="open-settings-btn" class="modal-menu-item"><i class="fas fa-cog"></i><span>Pengaturan</span></button><a href="#" id="modal-logout-btn" class="modal-menu-item logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a></div></div><div id="modal-logged-out-view" class="hidden"><p>Anda belum log in. Silakan log in untuk mengakses menu akun.</p><button id="modal-login-btn" class="btn-login">Log In</button></div></div></div></div>
+    <div id="settings-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Pengaturan</h3><button id="settings-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="modal-menu"><a href="profil.html" class="modal-menu-item"><i class="fas fa-user-edit"></i><span>Profil Saya</span></a><div class="modal-menu-item"><i class="fas fa-palette"></i><span>Mode Tampilan</span><button id="theme-toggle-icon" class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></div><a href="tentang.html" class="modal-menu-item"><i class="fas fa-info-circle"></i><span>Tentang Kami</span></a><a href="kebijakan.html" class="modal-menu-item"><i class="fas fa-shield-alt"></i><span>Kebijakan Privasi</span></a><a href="mailto:emailanda@gmail.com" class="modal-menu-item"><i class="fas fa-paper-plane"></i><span>Beri Masukan</span></a></div></div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>

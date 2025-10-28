@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Web3 - Kodemasadepan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <div id="page-loader"><div class="spinner"></div></div>
+    <div class="cursor-light-trail"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Buka Menu Navigasi"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo-link"><img src="logo.png" alt="Kodemasadepan Logo" class="logo-img"></a>
+            </div>
+            <nav class="header-nav">
+                <button id="profile-icon-btn" class="profile-icon-btn" aria-label="Buka Menu Profil"><i class="fas fa-user"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="article-header">
+                <h1>Belajar Web3</h1>
+                <p class="subtitle">Internet baru yang dimiliki oleh Anda.</p>
+            </section>
+
+            <section class="article-content">
+                <h2>Apa Itu Web3 Secara Singkat?</h2>
+                <p>Bayangkan internet di mana Anda benar-benar memiliki aset digital Anda, bukan perusahaan besar. **Web3** adalah evolusi internet yang dibangun di atas teknologi blockchain. Ini adalah pergeseran dari internet "baca" (Web 1.0) dan internet "baca-tulis" milik perusahaan (Web 2.0) ke internet "baca-tulis-miliki" (Web 3.0).</p>
+                <p>Di Web3, data Anda terdesentralisasi (tidak di satu server) dan Anda berinteraksi menggunakan dompet kripto. Ini membuka dunia baru untuk dApps (Aplikasi Terdesentralisasi), NFT, dan banyak lagi. Pelajari modul di bawah ini untuk memahaminya lebih dalam.</p>
+            </section>
+            
+            <hr class="section-divider">
+
+            <section class="lesson-list">
+                
+                <a href="belajar-web3-bab1.html" class="lesson-card">
+                    <div class="lesson-number">Bab 1</div>
+                    <div class="lesson-info">
+                        <h3>Evolusi Internet</h3>
+                        <p>Memahami perbedaan mendasar antara Web 1.0, Web 2.0, dan Web 3.0.</p>
+                    </div>
+                </a>
+                
+                <a href="belajar-web3-bab2.html" class="lesson-card">
+                    <div class="lesson-number">Bab 2</div>
+                    <div class="lesson-info">
+                        <h3>NFT dan Kepemilikan Digital</h3>
+                        <p>Apa itu Non-Fungible Token dan kenapa itu penting?</p>
+                    </div>
+                </a>
+                
+                <a href="belajar-web3-bab3.html" class="lesson-card">
+                    <div class="lesson-number">Bab 3</div>
+                    <div class="lesson-info">
+                        <h3>Smart Contract &amp dApps</h3>
+                        <p>Mengenal "otak" dan "mesin logika" yang menjalankan Web3.</p>
+                    </div>
+                </a>
+                
+                <a href="belajar-web3-bab4.html" class="lesson-card">
+                    <div class="lesson-number">Bab 4</div>
+                    <div class="lesson-info">
+                        <h3>DeFi (Keuangan Terdesentralisasi)</h3>
+                        <p>Membangun ulang sistem keuangan tanpa bank dan perantara.</p>
+                    </div>
+                </a>
+                
+                <a href="belajar-web3-bab5.html" class="lesson-card">
+                    <div class="lesson-number">Bab 5</div>
+                    <div class="lesson-info">
+                        <h3>DAO (Organisasi Otonomi)</h3>
+                        <p>Struktur organisasi masa depan yang dikelola oleh komunitas.</p>
+                    </div>
+                </a>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kodemasadepan</p>
+        </div>
+    </footer>
+
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+
+    <div id="nav-drawer" class="nav-drawer">
+        <div class="drawer-header"><h3>Menu</h3><button id="drawer-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div>
+        <div class="drawer-body">
+            <a href="index.html" class="drawer-link">Beranda</a>
+            <a href="belajar-blockchain.html" class="drawer-link">Blockchain</a>
+            <a href="ai.html" class="drawer-link">AI</a>
+            <a href="web3.html" class="drawer-link">Web3</a>
+        </div>
+    </div>
+
+    <div id="profile-modal" class="profile-modal hidden">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Menu Akun</h3><button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div>
+            <div class="modal-body">
+                <div id="modal-logged-in-view" class="hidden">
+                    <div class="user-info"><i class="fas fa-user-circle"></i><h4>Nama Pengguna</h4><p>@username_anda</p></div>
+                    <div class="modal-menu">
+                        <button id="open-settings-btn" class="modal-menu-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Pengaturan</span>
+                        </button>
+                        <a href="#" id="modal-logout-btn" class="modal-menu-item logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+                <div id="modal-logged-out-view" class="hidden">
+                    <p>Anda belum log in. Silakan log in untuk mengakses menu akun.</p><button id="modal-login-btn" class="btn-login">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="settings-modal" class="profile-modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Pengaturan</h3>
+                <button id="settings-close-btn" class="modal-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-menu">
+                    <a href="profil.html" class="modal-menu-item">
+                        <i class="fas fa-user-edit"></i>
+                        <span>Profil Saya</span>
+                    </a>
+                    <div class="modal-menu-item">
+                        <i class="fas fa-palette"></i>
+                        <span>Mode Tampilan</span>
+                        <button id="theme-toggle-icon" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <a href="tentang.html" class="modal-menu-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Tentang Kami</span>
+                    </a>
+                    <a href="kebijakan.html" class="modal-menu-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Kebijakan Privasi</span>
+                    </a>
+                    <a href="mailto:emailanda@gmail.com" class="modal-menu-item">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Beri Masukan</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

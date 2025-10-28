@@ -1,0 +1,675 @@
+/* ============================================== */
+/* === 1. PENGATURAN GLOBAL & VARIABLE WARNA === */
+/* ============================================== */
+
+:root {
+    /* Font Utama */
+    --font-main: 'Inter', sans-serif;
+
+    /* Warna Mode Terang (Default) */
+    --color-bg: #f5f7fa;
+    --color-bg-alt: #ffffff;
+    --color-card: #ffffff;
+    --color-text: #2c3e50;
+    --color-text-light: #5a7184;
+    --color-border: #e4e7eb;
+    --color-primary: #007aff;
+    --color-primary-light: #e6f2ff;
+    --color-glow: rgba(0, 122, 255, 0.15);
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    /* Transisi */
+    --transition-speed: 0.3s;
+}
+
+/* --- Pengaturan untuk Mode Gelap --- */
+/* Ini akan aktif jika <html> memiliki class .dark-mode */
+.dark-mode {
+    --color-bg: #0d1117;
+    --color-bg-alt: #161b22;
+    --color-card: #161b22;
+    --color-text: #c9d1d9;
+    --color-text-light: #8b949e;
+    --color-border: #30363d;
+    --color-primary: #008fff;
+    --color-primary-light: #1f6feb;
+    --color-glow: rgba(0, 143, 255, 0.2);
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================== */
+/* === 2. RESET DASAR & PENGATURAN BODY === */
+/* ============================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+}
+
+/* Ukuran font responsif */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.25rem; }
+
+@media (min-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+}
+
+
+p {
+    margin-bottom: 1rem;
+    color: var(--color-text-light);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 25px;
+}
+ul li, ol li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* ============================================== */
+/* === 3. PRELOADER & EFEK KURSOR === */
+/* ============================================== */
+
+/* --- Preloader Spinner --- */
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+    pointer-events: none;
+}
+#page-loader.hidden {
+    opacity: 0;
+}
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* --- Efek "AI Glow" Kursor --- */
+.cursor-light-trail {
+    position: fixed;
+    z-index: 999;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(
+        circle,
+        var(--color-glow) 0%,
+        rgba(0, 150, 255, 0) 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out, opacity 0.3s ease;
+    opacity: 0;
+}
+@media (pointer: coarse) {
+    .cursor-light-trail {
+        display: none;
+    }
+}
+
+
+/* ============================================== */
+/* === 4. TATA LETAK & CONTAINER UTAMA === */
+/* ============================================== */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================== */
+/* === 5. HEADER & NAVIGASI === */
+/* ============================================== */
+
+header {
+    background-color: var(--color-card);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 998;
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 32px;
+    width: auto;
+}
+
+.menu-toggle-btn,
+.profile-icon-btn {
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.5rem; /* 24px */
+    cursor: pointer;
+    padding: 8px;
+    transition: color var(--transition-speed) ease;
+}
+
+.menu-toggle-btn {
+    margin-right: 12px;
+}
+
+/* ============================================== */
+/* === 6. KONTEN HALAMAN: BERANDA (DIRAPIKAN) === */
+/* ============================================== */
+
+/* --- (DIHAPUS) .hero-banner dan .hero-overlay --- */
+
+/* --- (BARU) Teks Pengantar (Hero) --- */
+.hero {
+    /* Gradien "hidup" yang Anda minta */
+    background: linear-gradient(135deg, #0055a4, #0d1117);
+    padding: 60px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+/* Mode Terang: Gradien biru terang */
+.dark-mode:not(.dark-mode) .hero { /* Trik untuk mode terang */
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+.hero .subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 0; /* Hapus margin-bottom dari <p> di dalam hero */
+}
+
+/* Responsif untuk PC */
+@media (min-width: 768px) {
+    .hero {
+        padding: 80px 20px;
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+/* (BARU) Judul untuk Grid */
+.section-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: var(--color-text);
+}
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+        margin-top: 60px;
+    }
+}
+
+
+/* --- Kartu Topik (Grid) --- */
+.topics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 60px;
+}
+@media (min-width: 768px) {
+    .topics-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.topic-card {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+.topic-card h3 {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+.topic-card p {
+    color: var(--color-text-light);
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+
+/* ============================================== */
+/* === 7. KONTEN HALAMAN: ARTIKEL & PELAJARAN === */
+/* ============================================== */
+
+/* --- Header Artikel/Judul Halaman --- */
+.article-header {
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.article-header h1 {
+    font-size: 2.8rem;
+}
+.article-header .subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    margin-bottom: 0;
+}
+
+/* --- Konten Artikel --- */
+.article-content {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+.article-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Daftar Pelajaran (Lesson List) --- */
+.lesson-list {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.lesson-card {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+a.lesson-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+.lesson-card.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    background-color: var(--color-bg);
+}
+
+.lesson-number {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-right: 20px;
+    min-width: 50px;
+    text-align: center;
+}
+.lesson-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+a.lesson-card .lesson-info h3 {
+    color: var(--color-primary);
+}
+.lesson-info p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-bottom: 0;
+}
+
+/* --- Header Modul (di halaman Blockchain) --- */
+.lesson-list-header {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-border);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.lesson-list-header + .lesson-list {
+    margin-top: 0;
+}
+
+/* --- Garis Pemisah --- */
+hr.section-divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 40px auto 40px auto;
+    max-width: 800px;
+}
+
+/* ============================================== */
+/* === 8. FOOTER === */
+/* ============================================== */
+
+footer {
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    /* Hapus margin-top agar menempel di bawah grid */
+}
+footer p {
+    margin-bottom: 0;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+/* ============================================== */
+/* === 9. MODALS & NAV DRAWER (POP-UP) === */
+/* ============================================== */
+
+/* --- Backdrop (Latar Belakang Gelap) --- */
+.drawer-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.drawer-backdrop.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- Nav Drawer (Menu ☰) --- */
+.nav-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: var(--color-card);
+    z-index: 1001;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out, background-color var(--transition-speed) ease;
+}
+.nav-drawer.open {
+    transform: translateX(0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+.drawer-header h3 {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    padding: 4px;
+}
+.modal-close-btn:hover {
+    color: var(--color-text);
+}
+
+.drawer-body {
+    padding: 20px;
+}
+.drawer-link {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.drawer-link:hover {
+    background-color: var(--color-bg);
+}
+
+/* --- Modal Pop-up (Profil & Pengaturan) --- */
+.profile-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.profile-modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: var(--color-bg-alt);
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    max-width: 360px;
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+.modal-header h3 {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+/* Tampilan Logged Out */
+.modal-logged-out-view p {
+    text-align: center;
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+}
+.btn-login {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.btn-login:hover {
+    filter: brightness(1.1);
+}
+
+/* Tampilan Logged In */
+.user-info {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 12px;
+}
+.user-info .fa-user-circle {
+    font-size: 4rem;
+    color: var(--color-text-light);
+    margin-bottom: 12px;
+}
+.user-info h4 {
+    margin-bottom: 4px;
+    font-size: 1.2rem;
+}
+.user-info p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 0;
+}
+
+/* Menu di dalam Modal */
+.modal-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 10px;
+    border-radius: 8px;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+.modal-menu-item:hover {
+    background-color: var(--color-bg);
+}
+
+.modal-menu-item i {
+    font-size: 1.1rem;
+    width: 30px;
+    text-align: center;
+    margin-right: 12px;
+    color: var(--color-text-light);
+}
+.modal-menu-item span {
+    flex-grow: 1;
+}
+.modal-menu-item.logout {
+    color: #e74c3c;
+}
+.modal-menu-item.logout i {
+    color: #e74c3c;
+}
+
+/* Tombol (seperti 'Pengaturan') di dalam menu */
+.modal-menu button.modal-menu-item {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-main);
+}
+.modal-menu button.modal-menu-item:hover {
+    background-color: var(--color-bg);
+}
+
+/* Tombol Toggle Tema */
+.theme-toggle-btn {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    border-radius: 50px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+.theme-toggle-btn:hover {
+    background-color: var(--color-border);
+}

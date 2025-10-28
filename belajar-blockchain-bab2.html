@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 1.2: Konsep Inti Blockchain - Kodemasadepan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <div id="page-loader"><div class="spinner"></div></div>
+    
+    <div class="cursor-light-trail"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Buka Menu Navigasi">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Kodemasadepan Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <button id="profile-icon-btn" class="profile-icon-btn" aria-label="Buka Menu Profil">
+                    <i class="fas fa-user"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="article-header">
+                <h1>Modul 1: Konsep Inti Blockchain</h1>
+                <p class="subtitle">Desentralisasi, Kriptografi, dan Imutabilitas.</p>
+            </section>
+            
+            <section class="article-content">
+                <p>Di bab 1 kita membahas filosofi blockchain. Sekarang, kita akan menyelami tiga pilar teknis yang membuat blockchain berfungsi. Ini adalah "daging" dari teknologinya.</p>
+                
+                <h2>1. Desentralisasi</h2>
+                <p>Ini adalah ide utama. Dalam sistem tradisional (bank, Facebook, Google), data disimpan secara **tersentralisasi** (terpusat). Ada satu server utama atau satu perusahaan yang mengontrol semua data.</p>
+                <p>Dalam blockchain, data disimpan secara **desentralisasi**. Tidak ada server pusat. Sebaliknya, buku besar (ledger) disalin dan didistribusikan ke ribuan komputer (disebut "node") di seluruh dunia. Setiap node memiliki salinan data yang identik.</p>
+                <ul>
+                    <li><strong>Keuntungan:</strong>
+                        <ul>
+                            <li><strong>Anti Sensor:</strong> Tidak ada satu pihak pun yang bisa menghapus data atau memblokir transaksi Anda.</li>
+                            <li><strong>Tahan Banting (Fault Tolerance):</strong> Jika 1000 node mati, jaringan tetap berjalan karena ribuan node lainnya masih aktif. Tidak ada *single point of failure* (satu titik kegagalan).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2>2. Kriptografi</h2>
+                <p>Kriptografi adalah ilmu matematika tentang pengkodean dan penguraian kode pesan agar tetap aman. Blockchain menggunakan kriptografi untuk dua hal utama:</p>
+                <ul>
+                    <li><strong>Mengamankan Identitas (Kunci Publik &amp; Privat):</strong> Saat Anda membuat dompet (wallet), Anda mendapatkan sepasang kunci:
+                        <ul>
+                            <li><strong>Public Key (Kunci Publik):</strong> Ini adalah alamat dompet Anda (seperti nomor rekening). Aman untuk dibagikan ke siapa saja untuk menerima dana.</li>
+                            <li><strong>Private Key (Kunci Pribadi):</strong> Ini adalah kata sandi super rahasia Anda. Siapa pun yang memilikinya, dia memiliki akses penuh ke aset Anda. JANGAN PERNAH bagikan ini.</li>
+                        </ul>
+                        Transaksi Anda "ditandatangani" secara digital menggunakan Kunci Pribadi Anda untuk membuktikan bahwa itu benar-benar Anda.
+                    </li>
+                    <li><strong>Menghubungkan Blok (Fungsi Hash):</strong> Ini akan dibahas di Bab 3.</li>
+                </ul>
+
+                <h2>3. Imutabilitas (Kekekalan Data)</h2>
+                <p><strong>Imutabilitas</strong> berarti sekali sesuatu dicatat di blockchain, itu tidak dapat diubah, diedit, atau dihapus. Selamanya.</p>
+                <p>Bayangkan ini: Setiap blok "disegel" secara kriptografis dan terhubung dengan blok sebelumnya. Jika seorang peretas mencoba mengubah satu transaksi di blok lama (misal: Blok ke-100), segel kriptografi blok itu akan rusak. Karena segel blok ke-100 berubah, segel blok ke-101 (yang terhubung dengannya) juga akan rusak, dan begitu seterusnya sampai blok terakhir.</p>
+                <p>Untuk berhasil, peretas harus mengubah blok itu DAN semua blok setelahnya, di ribuan komputer di seluruh dunia, lebih cepat daripada jaringan membuat blok baru. Ini secara komputasi dianggap mustahil.</p>
+                <p>Kombinasi dari tiga pilar inilah yang menciptakan sistem yang **terbuka** (desentralisasi), **aman** (kriptografi), dan **dapat dipercaya** (imutabilitas) tanpa perlu otoritas pusat.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer><div class="container"><p>&copy; 2025 Kodemasadepan</p></div></footer>
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+    <div id="nav-drawer" class="nav-drawer"><div class="drawer-header"><h3>Menu</h3><button id="drawer-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="drawer-body"><a href="index.html" class="drawer-link">Beranda</a><a href="belajar-blockchain.html" class="drawer-link">Blockchain</a><a href="ai.html" class="drawer-link">AI</a><a href="web3.html" class="drawer-link">Web3</a></div></div>
+    <div id="profile-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Menu Akun</h3><button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div id="modal-logged-in-view" class="hidden"><div class="user-info"><i class="fas fa-user-circle"></i><h4>Nama Pengguna</h4><p>@username_anda</p></div><div class="modal-menu"><button id="open-settings-btn" class="modal-menu-item"><i class="fas fa-cog"></i><span>Pengaturan</span></button><a href="#" id="modal-logout-btn" class="modal-menu-item logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a></div></div><div id="modal-logged-out-view" class="hidden"><p>Anda belum log in. Silakan log in untuk mengakses menu akun.</p><button id="modal-login-btn" class="btn-login">Log In</button></div></div></div></div>
+    <div id="settings-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Pengaturan</h3><button id="settings-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="modal-menu"><a href="profil.html" class="modal-menu-item"><i class="fas fa-user-edit"></i><span>Profil Saya</span></a><div class="modal-menu-item"><i class="fas fa-palette"></i><span>Mode Tampilan</span><button id="theme-toggle-icon" class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></div><a href="tentang.html" class="modal-menu-item"><i class="fas fa-info-circle"></i><span>Tentang Kami</span></a><a href="kebijakan.html" class="modal-menu-item"><i class="fas fa-shield-alt"></i><span>Kebijakan Privasi</span></a><a href="mailto:emailanda@gmail.com" class="modal-menu-item"><i class="fas fa-paper-plane"></i><span>Beri Masukan</span></a></div></div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>

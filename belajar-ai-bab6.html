@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 6: Large Language Models (LLMs) - Kodemasadepan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div id="page-loader"><div class="spinner"></div></div>
+    <div class="cursor-light-trail"></div>
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Buka Menu Navigasi"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo-link"><img src="logo.png" alt="Kodemasadepan Logo" class="logo-img"></a>
+            </div>
+            <nav class="header-nav">
+                <button id="profile-icon-btn" class="profile-icon-btn" aria-label="Buka Menu Profil"><i class="fas fa-user"></i></button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="article-header">
+                <h1>Bab 6: Large Language Models (LLMs)</h1>
+                <p class="subtitle">Bedah Otak di Balik ChatGPT dan Model Bahasa.</p>
+            </section>
+            <section class="article-content">
+                <p>LLM adalah jenis Generative AI yang dirancang untuk memahami, menghasilkan, dan memproses bahasa manusia. Inilah yang membuat interaksi dengan AI seperti ChatGPT terasa sangat alami dan cerdas. LLM adalah **transformer** raksasa.</p>
+                
+                <h2>Konsep Standar (Definisi Kamus)</h2>
+                <p><em>"Large Language Model (LLM) adalah model Deep Learning yang dilatih pada dataset teks yang sangat besar (bisa mencapai triliunan kata). Model ini menggunakan arsitektur 'Transformer' untuk memahami konteks dan hubungan antar kata, memungkinkannya menghasilkan teks yang koheren dan kontekstual."</em></p>
+                
+                <h2>Bedah Konsep (Analogi Kami)</h2>
+                <p>Untuk memahami LLM, bayangkan ia adalah seorang **Pakar Kamus Raksasa** yang juga seorang **Sejarawan Dunia**.</p>
+                
+                <h3>1. "Large" (Besar)</h3>
+                <p>LLM adalah model yang sangat besar, baik dari segi data latih (seluruh internet, buku, dan Wikipedia) maupun dari segi jumlah parameter (angka di Neural Network-nya). GPT-3 memiliki 175 Miliar parameter. Besarnya data dan parameter ini memungkinkannya menyerap semua konteks dan pola bahasa manusia.</p>
+                
+                <h3>2. "Language Model" (Model Bahasa)</h3>
+                <p>Tugas dasar LLM hanyalah: **Memprediksi kata berikutnya**. Ketika Anda mengetik, "Saya pergi ke bank untuk...", LLM akan menghitung kata apa yang memiliki probabilitas tertinggi. Kata "menabung" punya probabilitas 80%, "berenang" 5%, dll. Ia memilih "menabung". Kemudian, ia memprediksi kata berikutnya, dan seterusnya. Rangkaian prediksi inilah yang terasa seperti "berpikir" atau "menulis".</p>
+                
+                <h3>3. Arsitektur Transformer (Kekuatan Konteks)</h3>
+                <p>Ini adalah "daging" teknisnya. Transformer adalah penemuan kunci yang memungkinkan LLM membaca **seluruh kalimat sekaligus**, bukan kata demi kata. Ini disebut mekanisme **Attention**.</p>
+                <p>Analogi: Jika Anda membaca "Pria itu menembak rusa dengan busur. Rusa itu berlari." Model biasa mungkin kesulitan mengetahui kata "Rusa itu" yang mana. Transformer, berkat Attention, tahu bahwa "Rusa itu" di kalimat kedua merujuk pada "rusa" di kalimat pertama. Ia mempertahankan konteks jarak jauh.</p>
+                
+                <div class="struggle-box">
+                    <h4>Jejak Perjuangan:</h4>
+                    <p><strong>Bagian yang Bikin Pusing:</strong><br>
+                    "Kami sering berpikir, jika LLM hanya memprediksi kata berikutnya, mengapa jawabannya bisa begitu logis dan bisa memecahkan masalah matematika? Apakah LLM benar-benar mengerti apa yang dikatakannya?"</p>
+                    
+                    <p><strong>Titik Pencerahan:</strong><br>
+                    "Kami menyadari bahwa LLM **tidak mengerti** dalam artian manusia (tidak memiliki kesadaran), tetapi ia adalah **emulator bahasa** yang sempurna. Ketika kita meminta LLM memecahkan soal matematika, ia tidak 'menghitung'. Ia mengingat dan memprediksi *pola* dari triliunan contoh buku matematika tentang *bagaimana jawaban soal X itu disusun secara logis*. Ia tidak menyelesaikan masalah; ia mereplikasi solusi masalah. Kemampuannya sangat menyerupai kecerdasan, sehingga perbedaan praktisnya hampir tidak relevan."</p>
+                </div>
+                
+                <h2>Inti dari Intinya (Ringkasan Kami)</h2>
+                <p>LLM adalah model Deep Learning yang besar yang didukung oleh arsitektur Transformer. Kekuatan sebenarnya bukan pada kecerdasan melainkan pada kemampuan Transformer untuk mengelola **konteks skala besar**. Ini memungkinkannya memprediksi urutan kata berikutnya dengan akurasi yang sedemikian tinggi sehingga meniru pemahaman dan komunikasi manusia. Model ini hanyalah serangkaian probabilitas yang sangat canggih.</p>
+            </section>
+        </div>
+    </main>
+    <footer><div class="container"><p>&copy; 2025 Kodemasadepan</p></div></footer>
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+    <div id="nav-drawer" class="nav-drawer"><div class="drawer-header"><h3>Menu</h3><button id="drawer-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="drawer-body"><a href="index.html" class="drawer-link">Beranda</a><a href="belajar-blockchain.html" class="drawer-link">Blockchain</a><a href="ai.html" class="drawer-link">AI</a><a href="web3.html" class="drawer-link">Web3</a></div></div>
+    <div id="profile-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Menu Akun</h3><button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div id="modal-logged-in-view" class="hidden"><div class="user-info"><i class="fas fa-user-circle"></i><h4>Nama Pengguna</h4><p>@username_anda</p></div><div class="modal-menu"><button id="open-settings-btn" class="modal-menu-item"><i class="fas fa-cog"></i><span>Pengaturan</span></button><a href="#" id="modal-logout-btn" class="modal-menu-item logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a></div></div><div id="modal-logged-out-view" class="hidden"><p>Anda belum log in. Silakan log in untuk mengakses menu akun.</p><button id="modal-login-btn" class="btn-login">Log In</button></div></div></div></div>
+    <div id="settings-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Pengaturan</h3><button id="settings-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="modal-menu"><a href="profil.html" class="modal-menu-item"><i class="fas fa-user-edit"></i><span>Profil Saya</span></a><div class="modal-menu-item"><i class="fas fa-palette"></i><span>Mode Tampilan</span><button id="theme-toggle-icon" class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></div><a href="tentang.html" class="modal-menu-item"><i class="fas fa-info-circle"></i><span>Tentang Kami</span></a><a href="kebijakan.html" class="modal-menu-item"><i class="fas fa-shield-alt"></i><span>Kebijakan Privasi</span></a><a href="mailto:emailanda@gmail.com" class="modal-menu-item"><i class="fas fa-paper-plane"></i><span>Beri Masukan</span></a></div></div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>

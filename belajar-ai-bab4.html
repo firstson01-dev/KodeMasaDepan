@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 4: Konsep Training - Kodemasadepan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div id="page-loader"><div class="spinner"></div></div>
+    <div class="cursor-light-trail"></div>
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Buka Menu Navigasi"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo-link"><img src="logo.png" alt="Kodemasadepan Logo" class="logo-img"></a>
+            </div>
+            <nav class="header-nav">
+                <button id="profile-icon-btn" class="profile-icon-btn" aria-label="Buka Menu Profil"><i class="fas fa-user"></i></button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="article-header">
+                <h1>Bab 4: "Belajar" itu Maksudnya Apa?</h1>
+                <p class="subtitle">Konsep Training, Data, dan Model (Membuat AI Cerdas).</p>
+            </section>
+            <section class="article-content">
+                <p>Kita sering bilang AI "belajar". Tapi secara teknis, apa yang terjadi di dalam Neural Network saat ia "belajar"? Ini adalah tiga pilar prosesnya.</p>
+                
+                <h2>Konsep Standar (Definisi Kamus)</h2>
+                <ul>
+                    <li><strong>Data (Latih/Training):</strong> Kumpulan informasi yang digunakan untuk melatih model ML/DL. Kualitasnya menentukan kecerdasan AI.</li>
+                    <li><strong>Model:</strong> Program atau arsitektur (seperti Neural Network) yang telah dilatih dan menyimpan pengetahuan yang ditemukan dari data.</li>
+                    <li><strong>Training (Pelatihan):</strong> Proses berulang (iteratif) di mana model menyesuaikan 'bobot' internalnya berdasarkan data untuk meminimalkan kesalahan (loss).</li>
+                </ul>
+                
+                <h2>Bedah Konsep (Analogi Kami)</h2>
+                <p>Bayangkan Anda sedang mengajari seorang anak (Model AI) cara membedakan apel dari jeruk.</p>
+                
+                <h3>1. Data adalah Buku Pelajaran</h3>
+                <p>Anda tidak memberinya aturan; Anda memberinya 1000 gambar. 500 label "Apel" dan 500 label "Jeruk". Ini adalah **Training Data**. Semakin banyak dan semakin beragam fotonya (foto Apel dari semua sudut, semua warna, semua kualitas), semakin pintar anak itu.</p>
+                
+                <h3>2. Model adalah Otak dengan Bobot Awal Acak</h3>
+                <p>Pada awalnya, otak Model (Neural Network) isinya nol. Bobotnya acak. Saat kita berikan satu foto (misal: Apel), Model menebak (misal: "Jeruk").</p>
+                
+                <h3>3. Training adalah Trial &amp; Error (Perulangan)</h3>
+                <p>Model bilang "Jeruk", padahal itu Apel. Ada **Kesalahan (Loss)**. Kita tidak bilang "Kamu salah!", tapi kita bilang, "Kamu salah sebesar X. Coba ubah bobot neuron internalmu sedikit agar jawaban di lain waktu mendekati Apel." Proses ini disebut **Backpropagation**.</p>
+                <p>Model mengulangi proses ini jutaan kali, menyesuaikan bobotnya sedikit demi sedikit, sampai ia tidak lagi salah. Saat Training selesai, Model telah menemukan pola matematis yang paling akurat. Ia kini menjadi **Model Terlatih**.</p>
+                
+                <div class="struggle-box">
+                    <h4>Jejak Perjuangan:</h4>
+                    <p><strong>Bagian yang Bikin Pusing:</strong><br>
+                    "Kami sering bingung membedakan antara Model dan Software. Bukankah ChatGPT itu software? Apa yang terjadi jika Modelnya di-update? Apakah kita harus download software baru?"</p>
+                    
+                    <p><strong>Titik Pencerahan:</strong><br>
+                    "Kami akhirnya sadar bahwa <strong>Model = Hasil Training</strong> (file angka yang menyimpan pengetahuan). <strong>Software = Mesin yang menjalankan Model</strong> (aplikasi ChatGPT).<br>
+                    Saat ChatGPT di-update (misalnya dari GPT-3.5 ke GPT-4), yang Anda dapatkan adalah *Model* yang baru dan lebih pintar, bukan Software-nya. Software-nya (antarmuka chat) sama, tetapi 'pengetahuan' di baliknya (Modelnya) sudah diganti. Inilah mengapa AI terasa hidup—karena yang di-update adalah pengetahuannya."</p>
+                </div>
+                
+                <h2>Inti dari Intinya (Ringkasan Kami)</h2>
+                <p>AI "belajar" bukan seperti manusia yang membaca buku, melainkan proses matematis yang berulang. Model (Neural Network) adalah wadahnya, Data adalah bahan bakarnya. Training adalah proses terus-menerus menyesuaikan bobot angka di Model sampai tingkat kesalahannya sangat rendah, memungkinkan Model untuk membuat prediksi atau menghasilkan output dengan akurasi tinggi.</p>
+            </section>
+        </div>
+    </main>
+    <footer><div class="container"><p>&copy; 2025 Kodemasadepan</p></div></footer>
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+    <div id="nav-drawer" class="nav-drawer"><div class="drawer-header"><h3>Menu</h3><button id="drawer-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="drawer-body"><a href="index.html" class="drawer-link">Beranda</a><a href="belajar-blockchain.html" class="drawer-link">Blockchain</a><a href="ai.html" class="drawer-link">AI</a><a href="web3.html" class="drawer-link">Web3</a></div></div>
+    <div id="profile-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Menu Akun</h3><button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div id="modal-logged-in-view" class="hidden"><div class="user-info"><i class="fas fa-user-circle"></i><h4>Nama Pengguna</h4><p>@username_anda</p></div><div class="modal-menu"><button id="open-settings-btn" class="modal-menu-item"><i class="fas fa-cog"></i><span>Pengaturan</span></button><a href="#" id="modal-logout-btn" class="modal-menu-item logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a></div></div><div id="modal-logged-out-view" class="hidden"><p>Anda belum log in. Silakan log in untuk mengakses menu akun.</p><button id="modal-login-btn" class="btn-login">Log In</button></div></div></div></div>
+    <div id="settings-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Pengaturan</h3><button id="settings-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="modal-menu"><a href="profil.html" class="modal-menu-item"><i class="fas fa-user-edit"></i><span>Profil Saya</span></a><div class="modal-menu-item"><i class="fas fa-palette"></i><span>Mode Tampilan</span><button id="theme-toggle-icon" class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></div><a href="tentang.html" class="modal-menu-item"><i class="fas fa-info-circle"></i><span>Tentang Kami</span></a><a href="kebijakan.html" class="modal-menu-item"><i class="fas fa-shield-alt"></i><span>Kebijakan Privasi</span></a><a href="mailto:emailanda@gmail.com" class="modal-menu-item"><i class="fas fa-paper-plane"></i><span>Beri Masukan</span></a></div></div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>

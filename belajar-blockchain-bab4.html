@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 2.4: Mekanisme Konsensus - Kodemasadepan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <div id="page-loader"><div class="spinner"></div></div>
+    
+    <div class="cursor-light-trail"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Buka Menu Navigasi">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Kodemasadepan Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <button id="profile-icon-btn" class="profile-icon-btn" aria-label="Buka Menu Profil">
+                    <i class="fas fa-user"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="article-header">
+                <h1>Modul 2: Mekanisme Konsensus</h1>
+                <p class="subtitle">Proof of Work (PoW) vs. Proof of Stake (PoS)</p>
+            </section>
+            
+            <section class="article-content">
+                <h2>Apa Itu Konsensus?</h2>
+                <p>Dalam jaringan terdesentralisasi seperti blockchain, tidak ada "bos" atau "server pusat" yang menentukan mana transaksi yang sah. Jadi, bagaimana ribuan komputer (node) di seluruh dunia bisa **sepakat** tentang satu kebenaran?</p>
+                <p>Jawabannya adalah **Mekanisme Konsensus**. Ini adalah seperangkat aturan yang memungkinkan jaringan untuk mencapai kesepakatan (konsensus) tentang keadaan buku besar saat ini.</p>
+                <p>Dua mekanisme paling terkenal adalah Proof of Work (PoW) dan Proof of Stake (PoS).</p>
+
+                <h2>1. Proof of Work (PoW) - "Bukti Kerja Keras"</h2>
+                <p>PoW adalah mekanisme konsensus pertama yang digunakan oleh Bitcoin. Ini adalah "daging" dari keamanan Bitcoin.</p>
+                <ul>
+                    <li><strong>Analogi:</strong> Bayangkan sebuah lomba matematika super sulit yang dibuka untuk umum. Siapa pun bisa ikut.</li>
+                    <li><strong>Mekanisme Teknis:</strong> Komputer (disebut "Miners" atau Penambang) di seluruh dunia berlomba untuk menjadi yang pertama memecahkan teka-teki kriptografi yang sangat kompleks. Teka-teki ini sulit dipecahkan tetapi sangat mudah diverifikasi jika jawabannya benar.</li>
+                    <li><strong>Proses:</strong> Penambang mengumpulkan transaksi yang menunggu, mencoba menebak jawaban (disebut "hash"), dan menghabiskan daya komputasi besar-besaran (listrik).</li>
+                    <li><strong>Hasil:</strong> Penambang pertama yang menemukan jawaban yang benar berhak untuk menambahkan "blok" transaksi baru ke dalam rantai.</li>
+                    <li><strong>Imbalan (Insentif):</strong> Sebagai imbalan atas "kerja keras" (listrik yang dihabiskan), mereka mendapatkan hadiah berupa koin baru (misalnya 6.25 BTC) ditambah biaya transaksi.</li>
+                </ul>
+                <p><strong>Kelebihan:</strong> Sangat aman dan teruji (sudah mengamankan Bitcoin selama lebih dari satu dekade).<br>
+                <strong>Kekurangan:</strong> Sangat boros energi dan lambat (Bitcoin hanya bisa memproses ~7 transaksi per detik).</p>
+
+                <h2>2. Proof of Stake (PoS) - "Bukti Kepemilikan"</h2>
+                <p>PoS adalah evolusi dari PoW, sekarang digunakan oleh Ethereum. Ini dirancang untuk menjadi jauh lebih efisien.</p>
+                <ul>
+                    <li><strong>Analogi:</strong> Bayangkan sebuah undian berbobot. Semakin banyak tiket lotre (koin) yang Anda miliki, semakin besar peluang Anda untuk "dipilih" memvalidasi blok.</li>
+                    <li><strong>Mekanisme Teknis:</strong> Tidak ada "penambang" yang berlomba. Sebaliknya, ada "Validator".</li>
+                    <li><strong>Proses:</strong> Untuk menjadi validator, Anda harus "mengunci" atau "mempertaruhkan" (staking) sejumlah besar koin asli jaringan (misal: 32 ETH) ke dalam Smart Contract sebagai jaminan.</li>
+                    <li><strong>Hasil:</strong> Alih-alih berlomba, sistem secara acak memilih satu validator untuk membuat blok berikutnya.</li>
+                    <li><strong>Imbalan (Insentif):</strong> Validator yang terpilih mendapatkan imbalan berupa biaya transaksi (bukan koin baru).</li>
+                    <li><strong>Hukuman (Disinsentif):</strong> Ini adalah kuncinya. Jika Anda seorang validator dan mencoba berbuat curang (misal: memvalidasi transaksi palsu), jaminan (stake) Anda akan **disita dan dihancurkan** oleh jaringan. Ini disebut *"slashing"*.</li>
+                </ul>
+                <p><strong>Kelebihan:</strong> Sangat hemat energi (99.9% lebih efisien dari PoW), lebih cepat, dan lebih skalabel.<br>
+                <strong>Kekurangan:</strong> Secara teori, bisa mengarah ke sentralisasi ("yang kaya semakin kaya" karena mereka bisa stake lebih banyak) dan belum teruji waktu se-ekstensif PoW.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer><div class="container"><p>&copy; 2025 Kodemasadepan</p></div></footer>
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+    <div id="nav-drawer" class="nav-drawer"><div class="drawer-header"><h3>Menu</h3><button id="drawer-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="drawer-body"><a href="index.html" class="drawer-link">Beranda</a><a href="belajar-blockchain.html" class="drawer-link">Blockchain</a><a href="ai.html" class="drawer-link">AI</a><a href="web3.html" class="drawer-link">Web3</a></div></div>
+    <div id="profile-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Menu Akun</h3><button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div id="modal-logged-in-view" class="hidden"><div class="user-info"><i class="fas fa-user-circle"></i><h4>Nama Pengguna</h4><p>@username_anda</p></div><div class="modal-menu"><button id="open-settings-btn" class="modal-menu-item"><i class="fas fa-cog"></i><span>Pengaturan</span></button><a href="#" id="modal-logout-btn" class="modal-menu-item logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a></div></div><div id="modal-logged-out-view" class="hidden"><p>Anda belum log in. Silakan log in untuk mengakses menu akun.</p><button id="modal-login-btn" class="btn-login">Log In</button></div></div></div></div>
+    <div id="settings-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Pengaturan</h3><button id="settings-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="modal-menu"><a href="profil.html" class="modal-menu-item"><i class="fas fa-user-edit"></i><span>Profil Saya</span></a><div class="modal-menu-item"><i class="fas fa-palette"></i><span>Mode Tampilan</span><button id="theme-toggle-icon" class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></div><a href="tentang.html" class="modal-menu-item"><i class="fas fa-info-circle"></i><span>Tentang Kami</span></a><a href="kebijakan.html" class="modal-menu-item"><i class="fas fa-shield-alt"></i><span>Kebijakan Privasi</span></a><a href="mailto:emailanda@gmail.com" class="modal-menu-item"><i class="fas fa-paper-plane"></i><span>Beri Masukan</span></a></div></div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>

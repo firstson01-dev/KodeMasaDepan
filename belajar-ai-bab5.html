@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 5: Generative AI - Kodemasadepan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div id="page-loader"><div class="spinner"></div></div>
+    <div class="cursor-light-trail"></div>
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Buka Menu Navigasi"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo-link"><img src="logo.png" alt="Kodemasadepan Logo" class="logo-img"></a>
+            </div>
+            <nav class="header-nav">
+                <button id="profile-icon-btn" class="profile-icon-btn" aria-label="Buka Menu Profil"><i class="fas fa-user"></i></button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="article-header">
+                <h1>Bab 5: Generative AI (GenAI)</h1>
+                <p class="subtitle">AI yang Mencipta: Konsep di Balik ChatGPT &amp; DALL-E.</p>
+            </section>
+            <section class="article-content">
+                <p>Kebanyakan AI generasi lama fokus pada **Klasifikasi** (membedakan anjing dari kucing). Generative AI (GenAI) berfokus pada **Penciptaan** (membuat anjing baru yang belum pernah ada). Ini adalah kategori AI yang mengubah dunia saat ini.</p>
+                
+                <h2>Konsep Standar (Definisi Kamus)</h2>
+                <p><em>"Generative AI adalah kelas model AI yang dirancang untuk menghasilkan data baru yang menyerupai (tetapi tidak identik dengan) data yang digunakan untuk melatihnya. Outputnya bisa berupa teks, gambar, musik, atau kode."</em></p>
+                
+                <h2>Bedah Konsep (Analogi Kami)</h2>
+                <p>Untuk memahami GenAI, bayangkan AI sebagai seorang murid yang cerdas:</p>
+                
+                <h3>AI Klasifikasi (Discrimination)</h3>
+                <p>Murid ini adalah **Kritikus Seni**. Dia melihat 10.000 foto. Tugasnya hanya menjawab: "Apakah ini foto lukisan Van Gogh (Ya/Tidak)?"</p>
+                
+                <h3>Generative AI (Creation)</h3>
+                <p>Murid ini adalah **Seniman**. Setelah melihat 10.000 lukisan Van Gogh, kita tidak memintanya mengklasifikasi. Kita memintanya: **"Lukiskan pemandangan kota New York, tapi dengan gaya Van Gogh."** AI akan menciptakan *sesuatu yang baru* berdasarkan pola yang ia serap.</p>
+                
+                <p>GenAI bekerja dengan mempelajari **probabilitas** (kemungkinan). Misalnya, dalam membuat teks, AI tidak "berpikir". Ia hanya menghitung: "Jika kata terakhir adalah 'Kucing', maka kata berikutnya yang paling mungkin (probabilitas tertinggi) adalah 'sedang' atau 'berlari'." GenAI merangkai kata demi kata dengan probabilitas tertinggi hingga menjadi kalimat yang koheren.</p>
+                
+                <div class="struggle-box">
+                    <h4>Jejak Perjuangan:</h4>
+                    <p><strong>Bagian yang Bikin Pusing:</strong><br>
+                    "Awalnya kami merasa takjub, 'Bagaimana AI bisa begitu kreatif?' Ini terasa seperti sihir. Tapi kami sadar bahwa jika AI hanya meniru data yang sudah ada, bukankah itu plagiarisme? Di mana batas antara inspirasi dan meniru?"</p>
+                    
+                    <p><strong>Titik Pencerahan:</strong><br>
+                    "Kami menyadari bahwa AI tidak melakukan plagiarisme. Ia tidak menempelkan gambar atau teks yang sudah ada. Ia melihat *pola* di tingkat paling fundamental (misal: bagaimana kuas Van Gogh bergerak, atau bagaimana kalimat diawali dan diakhiri).<br>
+                    <strong>GenAI tidak menyalin piksel, tetapi menyalin gaya (pola matematis)</strong>. Ini seperti seorang koki yang telah mencicipi 1000 jenis makanan dan kemudian menciptakan resep yang sama sekali baru dari pengetahuannya—bukan hanya menyalin satu resep."</p>
+                </div>
+                
+                <h2>Inti dari Intinya (Ringkasan Kami)</h2>
+                <p>Generative AI adalah pergeseran fokus AI dari memprediksi (klasifikasi) menjadi menciptakan. Ia bekerja dengan memecah data pelatihan (gambar, teks) menjadi pola-pola matematis paling dasar dan kemudian menggunakan pola-pola itu (probabilitas) untuk menyusun output yang sama sekali baru. Inilah kekuatan di balik revolusi konten saat ini.</p>
+            </section>
+        </div>
+    </main>
+    <footer><div class="container"><p>&copy; 2025 Kodemasadepan</p></div></footer>
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+    <div id="nav-drawer" class="nav-drawer"><div class="drawer-header"><h3>Menu</h3><button id="drawer-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="drawer-body"><a href="index.html" class="drawer-link">Beranda</a><a href="belajar-blockchain.html" class="drawer-link">Blockchain</a><a href="ai.html" class="drawer-link">AI</a><a href="web3.html" class="drawer-link">Web3</a></div></div>
+    <div id="profile-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Menu Akun</h3><button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div id="modal-logged-in-view" class="hidden"><div class="user-info"><i class="fas fa-user-circle"></i><h4>Nama Pengguna</h4><p>@username_anda</p></div><div class="modal-menu"><button id="open-settings-btn" class="modal-menu-item"><i class="fas fa-cog"></i><span>Pengaturan</span></button><a href="#" id="modal-logout-btn" class="modal-menu-item logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a></div></div><div id="modal-logged-out-view" class="hidden"><p>Anda belum log in. Silakan log in untuk mengakses menu akun.</p><button id="modal-login-btn" class="btn-login">Log In</button></div></div></div></div>
+    <div id="settings-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Pengaturan</h3><button id="settings-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="modal-menu"><a href="profil.html" class="modal-menu-item"><i class="fas fa-user-edit"></i><span>Profil Saya</span></a><div class="modal-menu-item"><i class="fas fa-palette"></i><span>Mode Tampilan</span><button id="theme-toggle-icon" class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></div><a href="tentang.html" class="modal-menu-item"><i class="fas fa-info-circle"></i><span>Tentang Kami</span></a><a href="kebijakan.html" class="modal-menu-item"><i class="fas fa-shield-alt"></i><span>Kebijakan Privasi</span></a><a href="mailto:emailanda@gmail.com" class="modal-menu-item"><i class="fas fa-paper-plane"></i><span>Beri Masukan</span></a></div></div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>

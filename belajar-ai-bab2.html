@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2: AI vs ML vs DL - Kodemasadepan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <div id="page-loader"><div class="spinner"></div></div>
+    
+    <div class="cursor-light-trail"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Buka Menu Navigasi">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Kodemasadepan Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <button id="profile-icon-btn" class="profile-icon-btn" aria-label="Buka Menu Profil">
+                    <i class="fas fa-user"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="article-header">
+                <h1>Bab 2: AI vs Machine Learning vs Deep Learning</h1>
+                <p class="subtitle">Membedah Tiga Lingkaran Konsentris yang Saling Terkait.</p>
+            </section>
+            
+            <section class="article-content">
+                <p>Jika kita membaca berita teknologi, tiga istilah ini muncul di mana-mana: AI, ML, dan DL. Mereka sering digunakan bergantian, padahal mereka adalah tiga konsep berbeda. Untuk memahaminya, bayangkan mereka sebagai **tiga lingkaran konsentris** (lingkaran di dalam lingkaran).</p>
+                
+                <h2>Konsep Standar (Definisi Kamus)</h2>
+                <ul>
+                    <li><strong>Artificial Intelligence (AI):</strong> Tujuan luas untuk membuat mesin meniru kecerdasan manusia.</li>
+                    <li><strong>Machine Learning (ML):</strong> Metode untuk mencapai AI. Ini memungkinkan mesin **belajar dari data** tanpa diprogram secara eksplisit (mencari aturannya sendiri).</li>
+                    <li><strong>Deep Learning (DL):</strong> Sub-bidang dari ML. Menggunakan **Jaringan Saraf Tiruan (Neural Networks) dengan banyak lapisan (deep)** untuk menganalisis data yang jauh lebih kompleks (gambar, suara, teks).</li>
+                </ul>
+                
+                <h2>Bedah Konsep (Analogi Kami)</h2>
+                <p>Mari kita visualisasikan konsep ini sebagai sebuah proyek:</p>
+                
+                <h3>1. AI (Lingkaran Terluar: Tujuannya)</h3>
+                <p>AI adalah **mimpi besar**. Tujuannya adalah membuat komputer bertindak "cerdas" (seperti mobil otonom yang bisa menyetir sendiri).</p>
+                
+                <h3>2. Machine Learning (Lingkaran Tengah: Caranya)</h3>
+                <p>ML adalah **alat yang kita gunakan**. Jika kita ingin AI mengenali kucing, kita tidak menulis 10.000 baris kode yang mengatakan "jika punya telinga segitiga, punya kumis, MAKA itu kucing." Sebaliknya, kita **memberi ML 1 juta foto kucing dan non-kucing**. ML mencari pola di antara 1 juta foto itu dan menciptakan aturannya sendiri.</p>
+                
+                <h3>3. Deep Learning (Lingkaran Terdalam: Kekuatan Super)</h3>
+                <p>DL adalah **mesin ML yang sangat canggih**. Ketika data menjadi sangat rumit (misalnya, memproses gambar, bukan hanya tabel data sederhana), ML biasa akan kesulitan. DL menggunakan arsitektur seperti otak manusia (lapisan saraf) untuk memecah masalah kompleks menjadi lapisan-lapisan kecil.</p>
+                <p>Contoh: AI yang bisa mengenali wajah di video secara real-time. Itu adalah Deep Learning.</p>
+                
+                <div class="struggle-box">
+                    <h4>Jejak Perjuangan:</h4>
+                    <p><strong>Bagian yang Bikin Pusing:</strong><br>
+                    "Kami sering bingung kapan harus menggunakan istilah yang mana. Ketika ChatGPT muncul, saya menyebutnya AI, tapi ada yang mengoreksi, katanya itu LLM (Large Language Model), yang merupakan hasil dari Deep Learning. Jadi mana yang benar?"</p>
+                    
+                    <p><strong>Titik Pencerahan:</strong><br>
+                    "Kami baru paham bahwa semua itu benar karena mereka adalah bagian dari hierarki:
+                    <br><strong>AI &gt; ML &gt; DL.</strong>
+                    <br>
+                    * ChatGPT adalah **AI** (Tujuannya cerdas).
+                    * Ia dibuat menggunakan teknik **Deep Learning** (Metode canggihnya).
+                    * Deep Learning adalah turunan dari **Machine Learning** (Bidang ilmunya).
+                    <br>
+                    Jika kita ingin bicara tentang bidang ilmu yang luas, pakai AI. Jika kita bicara tentang komputer yang belajar dari data, pakai ML. Jika kita bicara tentang AI Generatif modern, hampir pasti itu Deep Learning."</p>
+                </div>
+                
+                <h2>Inti dari Intinya (Ringkasan Kami)</h2>
+                <p>AI adalah payung besarnya. ML adalah metode cerdas di dalamnya. Dan DL adalah ML versi super canggih yang memungkinkan keajaiban AI modern (seperti chatbot yang bisa menghasilkan teks atau gambar) terjadi.</p>
+                <p>Anda bisa memiliki AI tanpa ML (seperti program catur lama yang pakai `IF-THEN`), tetapi Anda tidak bisa memiliki DL tanpa ML, dan Anda tidak bisa punya ML tanpa AI sebagai tujuan.</p>
+                
+            </section>
+        </div>
+    </main>
+
+    <footer><div class="container"><p>&copy; 2025 Kodemasadepan</p></div></footer>
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+    <div id="nav-drawer" class="nav-drawer"><div class="drawer-header"><h3>Menu</h3><button id="drawer-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="drawer-body"><a href="index.html" class="drawer-link">Beranda</a><a href="belajar-blockchain.html" class="drawer-link">Blockchain</a><a href="ai.html" class="drawer-link">AI</a><a href="web3.html" class="drawer-link">Web3</a></div></div>
+    <div id="profile-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Menu Akun</h3><button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div id="modal-logged-in-view" class="hidden"><div class="user-info"><i class="fas fa-user-circle"></i><h4>Nama Pengguna</h4><p>@username_anda</p></div><div class="modal-menu"><button id="open-settings-btn" class="modal-menu-item"><i class="fas fa-cog"></i><span>Pengaturan</span></button><a href="#" id="modal-logout-btn" class="modal-menu-item logout"><i class="fas fa-sign-out-alt"></i><span>Log Out</span></a></div></div><div id="modal-logged-out-view" class="hidden"><p>Anda belum log in. Silakan log in untuk mengakses menu akun.</p><button id="modal-login-btn" class="btn-login">Log In</button></div></div></div></div>
+    <div id="settings-modal" class="profile-modal hidden"><div class="modal-content"><div class="modal-header"><h3>Pengaturan</h3><button id="settings-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="modal-menu"><a href="profil.html" class="modal-menu-item"><i class="fas fa-user-edit"></i><span>Profil Saya</span></a><div class="modal-menu-item"><i class="fas fa-palette"></i><span>Mode Tampilan</span><button id="theme-toggle-icon" class="theme-toggle-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></div><a href="tentang.html" class="modal-menu-item"><i class="fas fa-info-circle"></i><span>Tentang Kami</span></a><a href="kebijakan.html" class="modal-menu-item"><i class="fas fa-shield-alt"></i><span>Kebijakan Privasi</span></a><a href="mailto:emailanda@gmail.com" class="modal-menu-item"><i class="fas fa-paper-plane"></i><span>Beri Masukan</span></a></div></div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>
